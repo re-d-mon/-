@@ -33,6 +33,8 @@ namespace WindowsFormsApp2
             textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             textBox1.Text = "R=";
             textBox1.ForeColor = Color.Gray;
+            panel3.Visible = false;
+            textBox2.ForeColor = Color.Black;
         }
 
 
@@ -61,5 +63,32 @@ namespace WindowsFormsApp2
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "Ответ:" + Convert.ToString(2*3.14*Convert.ToDouble( textBox1.Text));
+            textBox2.ForeColor = Color.Black;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = true;
+        }
+
+
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox2.ForeColor = Color.Black;
+                textBox2.Text = "Ответ:" + Convert.ToString(2*3.14*Convert.ToDouble( textBox1.Text));
+                
+            }
+        }
     }
 }
