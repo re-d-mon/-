@@ -32,8 +32,10 @@ namespace WindowsFormsApp2
             panel2.BackColor = Color.FromArgb(46, 52, 72);
             textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             textBox1.Text = "R=";
+            textBox4.Text = "R=";
             textBox1.ForeColor = Color.Gray;
             panel3.Visible = false;
+            textBox4.ForeColor = Color.Gray;
             textBox2.ForeColor = Color.Black;
         }
 
@@ -53,13 +55,28 @@ namespace WindowsFormsApp2
                 textBox1.ForeColor = Color.Gray;
             } 
         }
-
+        private void textBox4_load(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "")
+            {
+                textBox4.Text = "R=";
+                textBox4.ForeColor = Color.Gray;
+            }
+        }
         private void textBox1_Aktiv(object sender, EventArgs e)
         {
             if (textBox1.Text == "R=")
             {
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
+            }
+        }
+        private void textBox4_Aktiv(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "R=")
+            {
+                textBox4.Text = "";
+                textBox4.ForeColor = Color.Black;
             }
         }
 
@@ -93,7 +110,19 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
+            textBox3.ForeColor = Color.Black;
+            textBox3.Text = "Ответ:" + Convert.ToString(3.14 * Math.Pow(Convert.ToDouble(textBox4.Text), 2));
+        }
 
+        private void enter(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                textBox3.ForeColor = Color.Black;
+                textBox3.Text = "Ответ:" + Convert.ToString(3.14 * Math.Pow( Convert.ToDouble(textBox4.Text),2));
+
+            }
         }
     }
 }

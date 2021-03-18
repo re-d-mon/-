@@ -136,6 +136,9 @@
             resources.ApplyResources(this.textBox4, "textBox4");
             this.textBox4.Name = "textBox4";
             this.textBox4.UseWaitCursor = true;
+            this.textBox4.Enter += new System.EventHandler(this.textBox4_Aktiv);
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.enter);
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_load);
             // 
             // label4
             // 
